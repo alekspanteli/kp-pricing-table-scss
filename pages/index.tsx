@@ -3,9 +3,9 @@ import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import clsx from "clsx";
 
-function Tier({ name, price, href, features, featured = false }) {
+function Tier({ name, price, href, features, featured = false, btnClassName }) {
   return (
-    <article className={clsx("tier", featured && "tier--mirrored")}>
+    <article className={clsx("tier", featured && "tier--inverted")}>
       <h2 className="tier__title">{name}</h2>
       <ul className="tier__feature-list">
         {features.map((feature) => (
@@ -22,6 +22,7 @@ function Tier({ name, price, href, features, featured = false }) {
         href={href}
         color={featured ? "white" : "blue"}
         aria-label={`Get started with the ${name} plan for ${price}`}
+        className={btnClassName}
       >
         Get started
       </Button>
@@ -39,7 +40,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hosting plans</h1>
+        <h1 className="page-title">Hosting plans</h1>
         <Container>
           <div className="pricing-plans">
             <Tier
@@ -51,21 +52,8 @@ export default function Home() {
                 "Manual payroll support",
                 "Export up to 3 reports",
               ]}
-              price="$9"
+              price="$19"
               href="/"
-            />
-           <Tier
-              name="Free"
-              features={[
-                "Send 10 quotes and invoices",
-                "Connect up to 2 bank accounts",
-                "Track up to 15 expenses per month",
-                "Manual payroll support",
-                "Export up to 3 reports",
-              ]}
-              price="$9"
-              href="/"
-              featured
             />
             <Tier
               name="Free"
@@ -76,7 +64,20 @@ export default function Home() {
                 "Manual payroll support",
                 "Export up to 3 reports",
               ]}
-              price="$9"
+              price="$19"
+              href="/"
+              featured
+            />
+             <Tier
+              name="Free"
+              features={[
+                "Send 10 quotes and invoices",
+                "Connect up to 2 bank accounts",
+                "Track up to 15 expenses per month",
+                "Manual payroll support",
+                "Export up to 3 reports",
+              ]}
+              price="$19"
               href="/"
             />
           </div>

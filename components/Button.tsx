@@ -13,7 +13,7 @@ export function Button({
   ...props
 }) {
   className = clsx(
-    "inline-flex",
+    "btn",
     variantStyles[color],
     className
   );
