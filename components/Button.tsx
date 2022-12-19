@@ -1,27 +1,22 @@
 import Link from "next/link";
 import clsx from "clsx";
 
-const baseStyles = {
-  solid: "btn",
-};
+const baseStyles = "btn";
 
 const variantStyles = {
-  solid: {
     blue: "btn--blue",
     white: "btn--white",
-  },
 };
 
 export function Button({
-  variant = "solid",
   color = "blue",
   className,
   href,
   ...props
 }) {
   className = clsx(
-    baseStyles[variant],
-    variantStyles[variant][color],
+    baseStyles,
+    variantStyles[color],
     className
   );
 
