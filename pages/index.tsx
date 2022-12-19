@@ -5,23 +5,22 @@ import clsx from "clsx";
 
 function Tier({ name, price, href, features, featured = false }) {
   return (
-    <article>
-      <div className="tier">
-        <h2 className="tier__title">{name}</h2>
-        <ul className="tier__feature-list">
-          <li className="tier__list-item">1 domain</li>
-          <li className="tier__list-item">1 domain</li>
-          <li className="tier__list-item">1 domain</li>
-          <li className="tier__list-item">1 domain</li>
-        </ul>
-        <p className="tier__price">
-          {price}
-          <span>/mo</span>
-        </p>
-      </div>
+    <article className={clsx("tier", featured && "tier--mirrored")}>
+      <h2 className="tier__title">{name}</h2>
+      <ul className="tier__feature-list">
+        {features.map((feature) => (
+          <li key={feature} className="tier__list-item">
+            {feature}
+          </li>
+        ))}
+      </ul>
+      <p className="tier__price">
+        {price}
+        <span>/mo</span>
+      </p>
       <Button
         href={href}
-        color={featured ? 'white' : 'blue'}
+        color={featured ? "white" : "blue"}
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
         Get started
@@ -40,10 +39,46 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        Test
+        <h1>Hosting plans</h1>
         <Container>
           <div className="pricing-plans">
-            <Tier name="Free" price="$9" href="/" featured  />
+            <Tier
+              name="Free"
+              features={[
+                "Send 10 quotes and invoices",
+                "Connect up to 2 bank accounts",
+                "Track up to 15 expenses per month",
+                "Manual payroll support",
+                "Export up to 3 reports",
+              ]}
+              price="$9"
+              href="/"
+            />
+           <Tier
+              name="Free"
+              features={[
+                "Send 10 quotes and invoices",
+                "Connect up to 2 bank accounts",
+                "Track up to 15 expenses per month",
+                "Manual payroll support",
+                "Export up to 3 reports",
+              ]}
+              price="$9"
+              href="/"
+              featured
+            />
+            <Tier
+              name="Free"
+              features={[
+                "Send 10 quotes and invoices",
+                "Connect up to 2 bank accounts",
+                "Track up to 15 expenses per month",
+                "Manual payroll support",
+                "Export up to 3 reports",
+              ]}
+              price="$9"
+              href="/"
+            />
           </div>
         </Container>
       </main>
