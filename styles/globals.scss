@@ -1,0 +1,13 @@
+body{
+    background-color: gray;
+}
+
+.btn{
+    display: inline-flex;
+    &--blue{
+        background-color: rgb(blue, 1);
+    }
+    &--white{
+        background-color: rgb(white, 1);
+    }
+}
