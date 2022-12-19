@@ -118,6 +118,9 @@ body {
   justify-self: center;
   text-decoration: none;
   padding: 1em 1.5em;
+
+
+
   &--blue {
     background-color: rgb(blue, 1);
     
@@ -125,5 +128,10 @@ body {
   &--white {
     background-color: rgb(white, 1);
     color: $color-primary-400;
+  }
+
+  &:is(:hover, :focus){
+    color: $color-neutral-100;
+    background-color: rgb($color-neutral-900, .7);
   }
 }
