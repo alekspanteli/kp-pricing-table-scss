@@ -1,8 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
 
-const baseStyles = "btn";
-
 const variantStyles = {
     blue: "btn--blue",
     white: "btn--white",
@@ -15,7 +13,7 @@ export function Button({
   ...props
 }) {
   className = clsx(
-    baseStyles,
+    "inline-flex",
     variantStyles[color],
     className
   );
